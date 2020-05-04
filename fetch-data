@@ -1,0 +1,11 @@
+#!/bin/bash
+# Fetch data from Google
+wget -O Global_Mobility_Report.csv https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv
+sed '$d' README.md > README2.md
+echo "https://www.google.com/covid19/mobility/ Accessed: `date +'%Y %B %d %T'`" >> README2.md
+mv README2.md README.md
+
+# Fetch data from CSSEGISandData
+cd COVID-19
+git fetch
+cd ..
